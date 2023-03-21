@@ -1,63 +1,58 @@
 import { FunctionComponent, useState } from "react";
-import { Button } from "../Button";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tabs, TabPanel } from 'react-tabs';
+import { UserContext } from "../../contexts";
 import { CustomForm } from "../CustomForm";
 import { ContainerProps, Props } from "./ContainerSign.interface";
-import { TitlePanel, StyledContainerSign, StyledSignInContainer, StyledSignUpContainer, SubtitlePanel, StyledTab, StyledTabList } from "./ContainerSign.styles";
+import { StyledContainerSign, StyledSignInContainer, StyledSignUpContainer, StyledTab, StyledTabList, StyledBorderRight, StyledBorderLeft, StyledBorderInsideLeft, StyledBorderInsideRight, TitleTab } from "./ContainerSign.styles";
 
 const Container: FunctionComponent<ContainerProps> = (props: ContainerProps) => (
     <StyledContainerSign {...props}>
         <Tabs>
-    <StyledTabList>
-      <StyledTab tabIndex="0">Title 1</StyledTab>
-      <StyledTab tabIndex="1">Title 2</StyledTab>
-    </StyledTabList>
-
-    <TabPanel>
-    <StyledSignUpContainer {...props}>
-                <CustomForm 
-                    {...props.signUpForm}
-                />
-            </StyledSignUpContainer>
-    </TabPanel>
-    <TabPanel>
-    <StyledSignInContainer {...props}>
-                <CustomForm 
-                    {...props.loginForm}
-                />
-            </StyledSignInContainer>
-    </TabPanel>
-  </Tabs>
-
-
-            
-
-            {/* <OverlayContainer {...props}>
-                <Overlay {...props}>
-                    <OverlayPanelLeft {...props}>
-                        <TitlePanel>Bem-vindo(a) de volta!</TitlePanel>
-                        <SubtitlePanel>Faça login com sua conta</SubtitlePanel>
-                        <Button variation="default" text="Sign In" type="submit" onClick={() => props.handleClickFirst()}/>
-                    </OverlayPanelLeft>
-
-                    <OverlayPanelRight {...props}>
-                        <TitlePanel>Olá! Primeiro acesso?</TitlePanel>
-                        <SubtitlePanel>Crie seu usuário e tenha acesso!</SubtitlePanel>
-                        <Button variation="default" text="Sign Up" type="submit" onClick={() => props.handleClickSecond()}/>
-                    </OverlayPanelRight>
-                </Overlay>
-            </OverlayContainer> */}
-        </StyledContainerSign>
+            <StyledTabList>
+                <StyledTab tabIndex="0" selectedClassName="tab0_selected">
+                    <StyledBorderLeft className="tab0border_selected">
+                        <StyledBorderInsideLeft/>
+                    </StyledBorderLeft>
+                    <TitleTab><p>Entrar</p></TitleTab>
+                </StyledTab>
+            <StyledTab tabIndex="1" selectedClassName="tab1_selected">
+                <StyledBorderRight className="tab1border_selected">
+                    <StyledBorderInsideRight/>
+                    </StyledBorderRight>
+                    <TitleTab><p>Criar conta</p></TitleTab>
+                </StyledTab>
+            </StyledTabList>
+            <TabPanel>
+                <StyledSignInContainer {...props}>
+                    <UserContext.Consumer>
+                        {
+                            (userContext)  => (
+                                <CustomForm
+                                
+                                {...props.loginForm}
+                                loading={userContext.sendingLogin}
+                                
+                            />
+                            )
+                        }
+                    </UserContext.Consumer>
+                </StyledSignInContainer>
+            </TabPanel>
+            <TabPanel>
+                <StyledSignUpContainer {...props}>
+                    <CustomForm 
+                        {...props.signUpForm}
+                    />
+                </StyledSignUpContainer>
+            </TabPanel>
+        </Tabs>
+    </StyledContainerSign>
 );
 
 const ContainerSign: FunctionComponent<Props> = (props) => {
-    // const [tab, setTab] = useState<Tab>('left');
 
     return (
         <Container
-            // tab={tab}
-            // handleClickFirst={() => setTab('right')}
-            // handleClickSecond={() => setTab('left')}
             {...props}
         />
     );

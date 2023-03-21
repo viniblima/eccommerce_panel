@@ -15,12 +15,12 @@ const CustomFormField: FunctionComponent<Props> = (props: Props) => {
                     mask={maskValue}
                     onChange={props.onChange}
                     onBlur={props.onBlur}
-                    value={props.value}
+                    value={props.value || ""}
                     
                     >
                         <StyledInput type={props.type} name={props.name} placeholder={props.placeholder} />
                     </InputMask>
-                :   <StyledInput type={props.type} name={props.name} onChange={props.onChange} placeholder={props.placeholder}/>    
+                :   <StyledInput type={props.type} name={props.name} value={props.value || ""} onChange={props.onChange} placeholder={props.placeholder}/>    
             }
             <StyledErrorMessage name={props.name} component="div" />
         </StyledCustomFormFields>

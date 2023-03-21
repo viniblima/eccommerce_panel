@@ -1,11 +1,25 @@
 import './App.css';
 import Main from './router';
+import { ThemeProvider, UserContextProvider } from './contexts';
+import Theme from './styles/Theme';
+import React from 'react';
 
-function App() {
+class App extends React.Component {
 
-  return (
-      <Main />
-  );
+  changeSending() {
+
+  };
+
+  render() {
+    return (
+      <ThemeProvider value={Theme}>
+        <UserContextProvider>
+        <Main />
+        </UserContextProvider>
+      </ThemeProvider>
+    );
+  }
+  
 }
 
 export default App;

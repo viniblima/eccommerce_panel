@@ -6,8 +6,9 @@ export interface Props {
     title: string;
     substitle: string;
     initialValues: object;
-    onSubmit(): void;
+    onSubmit(values:object): void;
     validationSchema: Yup.ObjectSchema<any>;
     textButtonSubmit: string;
     typeButton: "button" | "submit" | "reset";
+    loading?: boolean;
 }

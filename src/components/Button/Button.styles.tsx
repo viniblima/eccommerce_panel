@@ -22,7 +22,7 @@ export const StyledButton = styled.button<Props>`
     transition: background-color 0.2s ease 0s;
 
     :hover {
-        background-color: ${(props) => props.background ? styles.colors.third : styles.colors.white};
+        background-color: ${(props) => props.background ? styles.colors.secondary : styles.colors.white};
     }
 
     :focus {

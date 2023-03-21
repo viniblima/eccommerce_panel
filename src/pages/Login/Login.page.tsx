@@ -11,37 +11,6 @@ const LoginPage: FunctionComponent = () => {
     const signUpForm: CustomFormProps = {
         fields: [
             {
-                placeholder: 'Email',
-                name: 'email',
-                onChange: () => {},
-                onBlur: () => {},
-                type: 'email'
-            },
-            {
-                placeholder: 'Senha',
-                name: 'password',
-                onChange: () => {},
-                onBlur: () => {},
-                type: 'password'
-            },
-        ],
-        title: 'Sign Up Form',
-        textButtonSubmit: "Criar",
-        typeButton: "button",
-        substitle: 'subtitle sign up Form',
-        validationSchema: validationsList['signup'],
-        initialValues: {
-            email: '',
-            password: '',
-        },
-        onSubmit: () => {
-
-        }
-    };
-    
-    const loginForm: CustomFormProps = {
-        fields: [
-            {
                 placeholder: 'Nome',
                 name: 'name',
                 onChange: () => {},
@@ -72,14 +41,43 @@ const LoginPage: FunctionComponent = () => {
                 type: 'text'
             },
         ],
+        title: 'Sign Up Form',
+        textButtonSubmit: "Criar",
+        typeButton: "button",
+        substitle: 'subtitle sign up Form',
+        validationSchema: validationsList['signup'],
+        initialValues: {
+        },
+        onSubmit: () => {
+
+        }
+    };
+    
+    const loginForm: CustomFormProps = {
+        
+        fields: [
+            {
+                placeholder: 'Email',
+                name: 'email',
+                onChange: () => {},
+                onBlur: () => {},
+                type: 'email'
+            },
+            {
+                placeholder: 'Senha',
+                name: 'password',
+                onChange: () => {},
+                onBlur: () => {},
+                type: 'password'
+            },
+        ],
         textButtonSubmit: "Logar",
         typeButton: "button",
         title: 'Login Form',
         substitle: 'subtitle Login Form',
         validationSchema: validationsList['login'],
         initialValues: {
-            email: '',
-            password: '',
+
         },
         onSubmit: () => {
 
