@@ -50,7 +50,10 @@ const LoginPage: FunctionComponent = () => {
         },
         onSubmit: () => {
 
-        }
+        },
+        loading: false,
+        showError: false,
+        error: "",
     };
     
     const loginForm: CustomFormProps = {
@@ -81,7 +84,10 @@ const LoginPage: FunctionComponent = () => {
         },
         onSubmit: () => {
 
-        }
+        },
+        loading: false,
+        showError: false,
+        error: "",
     };
     
     return(

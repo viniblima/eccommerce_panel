@@ -4,7 +4,10 @@ import { Field, ErrorMessage } from 'formik';
 import MaskedInput from "react-text-mask";
 
 export const StyledCustomFormFields = styled.div`
-    display: flex;
+    
+`;
+
+export const StyledContentField = styled.div`
 `;
 
 export const StyledMaskedInput = styled(MaskedInput)`
@@ -12,6 +15,7 @@ export const StyledMaskedInput = styled(MaskedInput)`
     border: none;
     padding: 12px 15px;
     margin: 8px 0;
+    border-radius: 18px;
     width: 100%;
 `;
 
@@ -20,6 +24,7 @@ export const StyledInput = styled(Field)`
     border: none;
     padding: 12px 15px;
     margin: 8px 0;
+    box-sizing: border-box;
     width: 100%;
     border-radius: 18px;
 `;

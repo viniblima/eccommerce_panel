@@ -8,7 +8,10 @@ const colors = {
     third: "#DA5D69",
     black: "#000000",
     gray: "#414143",
+    red: "#EA1D2C",
+    redHighlight: "rgba(234,29,44,0.2)",
     grayLight: "#eee",
+    backgroundGray: "#EAF2FC",
 };
 
 const fontWeights = {

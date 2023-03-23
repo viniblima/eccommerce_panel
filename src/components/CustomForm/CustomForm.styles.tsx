@@ -14,5 +14,6 @@ export const Subtitle = styled.p`
 `;
 
 export const LocalButton = styled(Button)`
-    margin-top: 40px;
+    
 `;
+

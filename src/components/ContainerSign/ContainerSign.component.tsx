@@ -30,8 +30,10 @@ const Container: FunctionComponent<ContainerProps> = (props: ContainerProps) => 
                                 <CustomForm
                                 
                                 {...props.loginForm}
-                                loading={userContext.sendingLogin}
-                                
+                                loading={userContext.sendingLogin!}
+                                onSubmit={userContext.login}
+                                showError={userContext.showErrorLogin!}
+                                error={userContext.errorLogin!}
                             />
                             )
                         }

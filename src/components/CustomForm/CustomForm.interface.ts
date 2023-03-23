@@ -10,5 +10,7 @@ export interface Props {
     validationSchema: Yup.ObjectSchema<any>;
     textButtonSubmit: string;
     typeButton: "button" | "submit" | "reset";
-    loading?: boolean;
+    loading: boolean;
+    showError: boolean;
+    error: string;
 }

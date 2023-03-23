@@ -49,6 +49,9 @@ const Template: ComponentStory<typeof ContainerSign> = (props: Props) => {
 export const Default = Template.bind({});
 Default.args = {
     loginForm: {
+        loading: false,
+        showError: false,
+        error: "",
         fields: [
             {
                 placeholder: 'Email',
@@ -79,6 +82,9 @@ Default.args = {
         }
     },
     signUpForm: {
+        loading: false,
+        showError: false,
+        error: "",
         fields: [
             {
                 placeholder: 'Nome',

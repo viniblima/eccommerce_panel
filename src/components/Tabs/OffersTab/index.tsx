@@ -1,0 +1,1 @@
+export { default as OffersTab } from "./OffersTab.component"

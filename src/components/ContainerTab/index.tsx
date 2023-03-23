@@ -1,0 +1,1 @@
+export { default as ContainerTab } from "./ContainerTab.component";
